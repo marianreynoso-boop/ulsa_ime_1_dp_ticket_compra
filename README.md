@@ -5,7 +5,7 @@
 
 ## 1. Descripción del problema (Fase 1)
 <!-- Explica con tus palabras qué hace tu programa y para qué serviría en la vida real. Máximo 4 líneas. -->
-
+Simula la compra de algun producto y te pide el descuento, precio, cantidad y nombre. Y al final da el ticket que muestra el subtotal, el descuento, el IVA y el total.
 _____
 
 ## 2. Entradas y salidas (Fase 1)
@@ -15,16 +15,16 @@ _____
 
 | Entrada | Tipo de dato | Función de `utilerias.h` |
 |---|---|---|
-| _____ | _____ | _____ |
-| _____ | _____ | _____ |
-| _____ | _____ | _____ |
-| _____ | _____ | _____ |
+| Nombre | std::string | leerCadena|
+| Precio | double | leerDecimal |
+| Cantidad | int | leerEntero |
+| Descuento | double | leerDecimal |
 
 **Salida** (¿qué datos muestra el ticket?):
-_____
+subtotal, el descuento, el IVA y el total
 
 **¿El IVA se calcula sobre el subtotal o sobre lo que queda después del descuento? ¿Por qué?**
-_____
+sobre el subtotal despues de aplicar el descuento, porque representa el impuesto sobre el valor que realmente pagas
 
 ## 3. Restricciones e invariante (Fases 1 y 2)
 
@@ -32,30 +32,30 @@ _____
 
 | Dato | ¿Qué valores son válidos? | ¿Por qué? |
 |---|---|---|
-| Nombre del producto | _____ | _____ |
-| Precio | _____ | _____ |
-| Cantidad | _____ | _____ |
-| Descuento (%) | _____ | _____ |
+| Nombre del producto | Letras | Porque es un nombre, no una cantidad|
+| Precio | Numeros enteros o decimales | Porque indica el precio del producto |
+| Cantidad | Numeros | Para indicar cuantos de cada producto se llevan |
+| Descuento (%) | Numeros enteros o decimales | Porque es la cantidad de dinero que se le restará a al producto |
 
 **¿Qué hace mi programa si el usuario escribe un dato fuera de rango?**
-_____
+Pide que lo vuelva a ingresar ya que esta incorrecto
 
 **¿Puede el total salir negativo? ¿Por qué?**
-_____
+No, porque se debe de tener ganancia
 
 **Invariante 1** (después del ciclo que valida el precio, ¿qué es siempre cierto sobre `precio`?):
-_____
+Debe ser >0
 
 **Invariante 2** (¿qué relación se cumple siempre entre el subtotal, el descuento, el IVA y el total?):
-_____
+total= subtotal - descuento + IVA
 
 ## 4. Casos resueltos a mano (Fase 1)
 
 | Caso | Nombre | Precio | Cantidad | Descuento (%) | Subtotal | Descuento ($) | IVA | Total |
 |---|---|---|---|---|---|---|---|---|
-| 1 (sin descuento) | _____ | _____ | _____ | _____ | _____ | _____ | _____ | _____ |
-| 2 (con descuento) | _____ | _____ | _____ | _____ | _____ | _____ | _____ | _____ |
-| 3 (precio con centavos) | _____ | _____ | _____ | _____ | _____ | _____ | _____ | _____ |
+| 1 (sin descuento) | 50 | 1 | 0% | 50 | $0 | 8 | $58 |
+| 2 (con descuento) | 50 | 1 | 15% | $42.5 | $7.5 | $49.3 | 
+| 3 (precio con centavos) | 50.63 | 1 | 15% | $43.0355 | $7.5945 | $6.88568 | $49.92118 
 
 ## 5. Tipo de dato abstracto (Fase 1)
 
