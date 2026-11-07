@@ -60,19 +60,19 @@ total= subtotal - descuento + IVA
 ## 5. Tipo de dato abstracto (Fase 1)
 
 | TDA | Datos (¿qué tiene?) | Operaciones (¿qué se puede hacer con él?) |
-|---|---|---|
+||
 | Producto | nombre (texto), _____, _____ | calcular su subtotal |
-| _____ | _____ | _____ |
+| Cantidad | cantidad (numeros) | multiplicar por el precio unitario|
 
 **Jerarquías:** una tienda vende productos por pieza (un cuaderno) y productos por peso (un kilo de tortillas). ¿Los dos son productos? ¿Qué datos tienen en común y cuál cambia?
-_____
+Si, tienen en común el nombre y cambia la cantidad
 
 ## 6. Análisis descendente (Fase 2)
 <!-- Completa el árbol. Marca con (ya existe) las partes que ya resuelve una función de utilerias.h o de ticket.h. -->
 
 ```
 Generar ticket de compra
-├── 1. Mostrar bienvenida
+├── 1. Mostrar bienvenida (ya existe)
 ├── 2. Pedir los datos
 │     ├── 2.1 Pedir el nombre del producto
 │     ├── 2.2 Pedir el precio (y validar que _____)
