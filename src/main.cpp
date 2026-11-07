@@ -14,18 +14,25 @@
 
 #include "utilerias.h"
 #include "ticket.h"
-
-
-int main() {
-    // Variables (siempre inicializadas)
+void imprimirTicket(
+    const std::string& nombre, int cantidad, double precio,
+    double subtotal, double montoDescuento, double iva, double total,
+    double porcentajeDescuento
+) { 
+     // Variables (siempre inicializadas)
     // TODO: ¿cuántas necesitas? ¿De qué tipo es cada una?
-    void imprimirTicket(const std::string& nombre, int cantidad, double precio,
-                        double subtotal, double montoDescuento, double iva, double total, double porcentajeDescuento){
-        std::cout << "\n---Ticket de Compra---\n"
+     std::cout << "\n---Ticket de Compra---\n"
                 << "Producto: " << nombre << '\n'
                 << "Cantidad: " << cantidad << '\n'
+                << "Precio $: " << precio << '\n'
+                << "Subtotal $: " << subtotal << '\n'
+                << "Descuento: $ " << montoDescuento << '\n'
+                << "Iva: $ " << iva << '\n'
+                << "Total : $ " << total << '\n'
+                << "Porcentaje Descuento : % " << porcentajeDescuento << '\n';
+  }
 
-                        }
+int main() {
     // Paso 1: mensaje de bienvenida
     // TODO
     std::cout << "=== SISTEMA DE VENTAS MECATRONICA ===\n";
@@ -38,7 +45,7 @@ int main() {
           // Paso 2: solicitar y validar precio, cantidad y descuento
     double precio = leerDecimal("Ingrese el precio unitario: ");
     while (precio <= 0) {
-        std::cout << "[ERROR] El precio debe ser mayor a 0. Intente de nuevo.\n";
+        std::cout << "[ERROR] El precio debe ser mayor a 0. Ingréselo de nuevo.\n";
         precio = leerDecimal("Ingrese el precio unitario: ");
     }
     int cantidad = 0;
@@ -50,21 +57,21 @@ int main() {
 
     double porcentajeDescuento = leerDecimal("Ingrese el porcentaje de descuento (0-99): ");
     while (porcentajeDescuento < 0 || porcentajeDescuento > 99) {
-        std::cout << "[ERROR] El descuento debe estar entre 0 y 99. Intente de nuevo.\n";
+        std::cout << "[ERROR] El descuento debe estar entre 0 y 99. Ingréselo de nuevo.\n";
         porcentajeDescuento = leerDecimal("Ingrese el porcentaje de descuento (0-99): ");
     }
 
     // Paso 3: calcular los importes llamando a los módulos de ticket.h
     // TODO
       // Paso 3: calcular los importes
-     subtotal = precio * cantidad;
-     montoDescuento = subtotal * porcentajeDescuento / 100.0;
-     iva = subtotal * 16.0 / 100.0; // IVA del 16%
-     total = subtotal + iva - montoDescuento;
+     double subtotal = precio * cantidad;
+     double montoDescuento = subtotal * porcentajeDescuento / 100.0;
+     double iva = subtotal * 16.0 / 100.0; // IVA del 16%
+     double total = subtotal + iva - montoDescuento;
     // Paso 4: imprimir el ticket
     // TODO
 
-    imprimirTicket(nombre, cantidad, precio, subtotal, montoDescuento, iva, total);
+    imprimirTicket(nombre, cantidad, precio, subtotal, montoDescuento, iva, total, porcentajeDescuento);
     // ¿Qué significa return 0;?
     return 0;
 }
