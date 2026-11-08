@@ -73,24 +73,24 @@ Si, tienen en común el nombre y cambia la cantidad
 ```
 Generar ticket de compra
 ├── 1. Mostrar bienvenida (ya existe)
-├── 2. Pedir los datos
-│     ├── 2.1 Pedir el nombre del producto
-│     ├── 2.2 Pedir el precio (y validar que _____)
-│     ├── 2.3 _____
-│     └── 2.4 _____
+├── 2. Pedir los datos (ya existe)
+│     ├── 2.1 Pedir el nombre del producto (ya existe)
+│     ├── 2.2 Pedir el precio (y validar que sea >0)
+│     ├── 2.3 Pedir la cantidad
+│     └── 2.4 Pedir el porcentaje de descuento (y verificar que vaya de 0-99)
 ├── 3. Calcular los importes
 │     ├── 3.1 Calcular el subtotal
-│     ├── 3.2 _____
-│     ├── 3.3 _____
-│     └── 3.4 _____
-└── 4. _____
+│     ├── 3.2 Calcular el monto de descuento
+│     ├── 3.3 Calcular el IVA
+│     └── 3.4 Calcular el total
+└── 4. Immprimir el ticket
 ```
 
 **Análisis ascendente: ¿qué partes del árbol ya estaban resueltas por una función que existe? ¿Cuáles?**
-_____
+Mostrar la bienvenida
 
 **¿Alguna parte del árbol hacía más de una cosa? ¿Cómo la dividiste?**
-_____
+no
 
 ## 7. Módulos y receta (Fase 2)
 
@@ -98,14 +98,14 @@ _____
 |---|---|---|---|
 | `calcularSubtotal` | precio, cantidad | el subtotal | Función |
 | `calcularDescuento` | subtotal, porcentaje | el monto del descuento | Función |
-| `calcularIVA` | _____ | _____ | _____ |
-| `imprimirTicket` | _____ | _____ | _____ |
+| `calcularIVA` | subtotal, iva | el iva segun el subtotal |Funcion  |
+| `imprimirTicket` | precio, cantidad, descuento |producto, cantidad, precio, subtotal, descuento, Iva, Total, Porcentaje de descuento  | Procedimiento |
 | _____ | _____ | _____ | _____ |
 
 <!-- Tu receta va en el archivo RECETA.md. Aquí solo responde las preguntas. -->
 
-**¿Probé mi receta a mano con mis 3 casos?** Sí / No
-**¿Tuve que corregirla? ¿Qué cambié?** _____
+**¿Probé mi receta a mano con mis 3 casos?** Sí 
+**¿Tuve que corregirla? ¿Qué cambié?** cambie lo de los modulos
 
 ## 8. Cómo compilar y ejecutar (Fase 3)
 
